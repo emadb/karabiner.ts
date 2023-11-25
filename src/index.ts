@@ -33,6 +33,8 @@ writeToProfile('Default', [
     map('j').to('left_arrow'), 
     map('k').to('down_arrow'), 
     map('l').to('right_arrow'),
+    map('o').to('page_up'),
+    map('.').to('page_down'),
   ])
                       
  
