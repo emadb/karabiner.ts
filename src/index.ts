@@ -18,20 +18,24 @@ import {
 // + Create a new profile if needed.
 writeToProfile('Default', [
   layer('caps_lock', 'mod-layer').manipulators([
-    map('a').to('left_shift'), 
+    map('a').to('left_shift'),               
     map('s').to('left_control'), 
-    map('d').to('left_option'), 
+    map('d').to('left_option'),  
     map('f').to('left_command'),
   ]),
-
-  simlayer('f', 'nav-layer').manipulators([
+                    
+  simlayer('spacebar', 'nav-layer', 500)
+  .options({
+    key_down_order: 'strict',
+  })
+  .manipulators([
     map('i').to('up_arrow'), 
     map('j').to('left_arrow'), 
     map('k').to('down_arrow'), 
     map('l').to('right_arrow'),
   ])
-
-
+                      
+ 
 
   // layer(['caps_lock'], 'nav-layer')
   // //.configKey((v) => v.toIfAlone('b', '⌘'), true)
@@ -45,7 +49,7 @@ writeToProfile('Default', [
   //   map('j').to('left_arrow'), 
   //   map('k').to('down_arrow'), 
   //   map('l').to('right_arrow'),
-  // ]),
+  // ]),  
 ])
 
 /*
