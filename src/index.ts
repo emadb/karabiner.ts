@@ -17,17 +17,8 @@ import {
 // (--dry-run print the config json into console)
 // + Create a new profile if needed.
 writeToProfile('Default', [
-  layer('caps_lock', 'mod-layer').manipulators([
-    map('a').to('left_shift'),               
-    map('s').to('left_control'), 
-    map('d').to('left_option'),  
-    map('f').to('left_command'),
-  ]),
-                    
-  simlayer('spacebar', 'nav-layer', 500)
-  .options({
-    key_down_order: 'strict',
-  })
+  layer('caps_lock', 'mod-layer')
+  .configKey((v) => v.toIfAlone('escape'), true)
   .manipulators([
     map('i').to('up_arrow'), 
     map('j').to('left_arrow'), 
@@ -35,6 +26,17 @@ writeToProfile('Default', [
     map('l').to('right_arrow'),
     map('o').to('page_up'),
     map('.').to('page_down'),
+  ]),
+                     
+  simlayer('spacebar', 'nav-layer', 500)
+  .options({
+    key_down_order: 'strict',
+  })
+  .manipulators([
+    map('a').to('left_shift'),               
+    map('s').to('left_control'), 
+    map('d').to('left_option'),  
+    map('f').to('left_command'),
   ])
                       
  
