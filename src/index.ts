@@ -9,6 +9,7 @@ import {
   simlayer,
   withCondition,
   withMapper,
+  mapSimultaneous,
   writeToProfile,
   hyperLayer,
 } from 'karabiner.ts'
@@ -17,7 +18,9 @@ import {
 // (--dry-run print the config json into console)
 // + Create a new profile if needed.
 writeToProfile('Default', [
-  layer('caps_lock', 'mod-layer')
+
+
+  layer('caps_lock', 'nav-layer')
   .configKey((v) => v.toIfAlone('escape'), true)
   .manipulators([
     map('i').to('up_arrow'), 
@@ -27,8 +30,12 @@ writeToProfile('Default', [
     map('o').to('page_up'),
     map('.').to('page_down'),
   ]),
-                     
-  simlayer('spacebar', 'nav-layer', 500)
+
+  // rule('mod', ifVar('mod-layer')).manipulators([
+  //   map('a').to('left_shift'),                
+  // ]),
+
+  simlayer('spacebar', 'mod-layer', 500)
   .options({
     key_down_order: 'strict',
   })
@@ -37,6 +44,11 @@ writeToProfile('Default', [
     map('s').to('left_control'), 
     map('d').to('left_option'),  
     map('f').to('left_command'),
+
+    map('j').to('right_command'),
+    map('k').to('right_option'),  
+    map('l').to('right_control'), 
+    map(';').to('right_shift'),               
   ])
                       
  
