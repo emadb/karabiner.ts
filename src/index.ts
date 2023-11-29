@@ -21,29 +21,20 @@ import {
 // (--dry-run print the config json into console)
 // + Create a new profile if needed.
 writeToProfile('Default', [
-
-  // duoLayer('spacebar', 'a').manipulators({
-  //   j: toKey('left_arrow', 'left_shift'),
-  //   k: toKey('down_arrow', 'left_shift'),
-  //   i: toKey('up_arrow', 'left_shift'),
-  //   l: toKey('right_arrow', 'left_shift'),
-  // }),
-
   simlayer('spacebar', 'mod-layer', 500)
   .options({
     key_down_order: 'strict',
   })
-  .manipulators([
-    map('a').to('left_shift'),               
-    map('s').to('left_control'), 
-    map('d').to('left_option'),  
-    map('f').to('left_command'),
-
-    map('j').to('right_command'),
-    map('k').to('right_option'),  
-    map('l').to('right_control'), 
-    map(';').to('right_shift'),               
-  ]),
+  .manipulators({
+    a: toKey('left_shift'),               
+    s: toKey('left_control'), 
+    d: toKey('left_option'),  
+    f: toKey('left_command'),
+    j: toKey('right_command'),
+    k: toKey('right_option'),  
+    l: toKey('right_control'), 
+    ';': toKey('right_shift'),               
+  }),
 
   layer('⇪', 'caps_lock pressed')
   .configKey((v) => v.toIfAlone('escape'), true)
@@ -60,26 +51,6 @@ writeToProfile('Default', [
     d: toKey('<⌥'),
     f: toKey('<⌘'),
   }),
-
-  // rule('mod', ifVar('mod-layer')).manipulators([
-  //   map('a').to('left_shift'),                
-  // ]),
-                      
- 
-
-  // layer(['caps_lock'], 'nav-layer')
-  // //.configKey((v) => v.toIfAlone('b', '⌘'), true)
-  // .manipulators([
-  //   // map('a').to('left_shift'), 
-  //   // map('s').to('left_control'), 
-  //   // map('d').to('left_option'), 
-  //   // map('f').to('left_command'),
-
-  //   map('i').to('up_arrow'), 
-  //   map('j').to('left_arrow'), 
-  //   map('k').to('down_arrow'), 
-  //   map('l').to('right_arrow'),
-  // ]),  
 ])
 
 /*
