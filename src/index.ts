@@ -9,8 +9,11 @@ import {
   simlayer,
   withCondition,
   withMapper,
+  duoLayer,
+  toKey,
   mapSimultaneous,
   writeToProfile,
+  withModifier,
   hyperLayer,
 } from 'karabiner.ts'
 
@@ -19,21 +22,12 @@ import {
 // + Create a new profile if needed.
 writeToProfile('Default', [
 
-
-  layer('caps_lock', 'nav-layer')
-  .configKey((v) => v.toIfAlone('escape'), true)
-  .manipulators([
-    map('i').to('up_arrow'), 
-    map('j').to('left_arrow'), 
-    map('k').to('down_arrow'), 
-    map('l').to('right_arrow'),
-    map('o').to('page_up'),
-    map('.').to('page_down'),
-  ]),
-
-  // rule('mod', ifVar('mod-layer')).manipulators([
-  //   map('a').to('left_shift'),                
-  // ]),
+  // duoLayer('spacebar', 'a').manipulators({
+  //   j: toKey('left_arrow', 'left_shift'),
+  //   k: toKey('down_arrow', 'left_shift'),
+  //   i: toKey('up_arrow', 'left_shift'),
+  //   l: toKey('right_arrow', 'left_shift'),
+  // }),
 
   simlayer('spacebar', 'mod-layer', 500)
   .options({
@@ -49,7 +43,27 @@ writeToProfile('Default', [
     map('k').to('right_option'),  
     map('l').to('right_control'), 
     map(';').to('right_shift'),               
-  ])
+  ]),
+
+  layer('⇪', 'caps_lock pressed')
+  .configKey((v) => v.toIfAlone('escape'), true)
+  .modifiers('??')
+  .manipulators({
+    i: toKey('up_arrow'), 
+    j: toKey('left_arrow'), 
+    k: toKey('down_arrow'), 
+    l: toKey('right_arrow'),
+    o: toKey('page_up'),
+    '.': toKey('page_down'),
+    a: toKey('‹⇧'),
+    s: toKey('<⌃'),
+    d: toKey('<⌥'),
+    f: toKey('<⌘'),
+  }),
+
+  // rule('mod', ifVar('mod-layer')).manipulators([
+  //   map('a').to('left_shift'),                
+  // ]),
                       
  
 
