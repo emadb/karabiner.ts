@@ -40,6 +40,7 @@ writeToProfile('Default', [
   .configKey((v) => v.toIfAlone('escape'), true)
   .modifiers('??')
   .manipulators({
+    '\u23CE': toKey('delete_or_backspace'),
     i: toKey('up_arrow'), 
     j: toKey('left_arrow'), 
     k: toKey('down_arrow'), 
