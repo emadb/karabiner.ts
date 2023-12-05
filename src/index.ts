@@ -33,8 +33,10 @@ writeToProfile('Default', [
     j: toKey('right_command'),
     k: toKey('right_option'),  
     l: toKey('right_control'), 
-    ';': toKey('right_shift'),               
-  }),
+    ';': toKey('right_shift'),   
+     '\u23CE': toKey('delete_or_backspace'),            
+  }),  
+                                    
 
   layer('⇪', 'caps_lock pressed')
   .configKey((v) => v.toIfAlone('escape'), true)
