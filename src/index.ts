@@ -1,4 +1,4 @@
-import {
+ import {
   ifApp,
   ifVar,
   layer,
@@ -24,7 +24,7 @@ writeToProfile('Default', [
   simlayer('spacebar', 'mod-layer', 500)
   .options({
     key_down_order: 'strict',
-  })
+  }) 
   .manipulators({
     a: toKey('left_shift'),               
     s: toKey('left_control'), 
@@ -38,17 +38,18 @@ writeToProfile('Default', [
   }),  
                                     
 
-  layer('⇪', 'caps_lock pressed')
+  layer('⇪', 'caps_lock pressed')  
   .configKey((v) => v.toIfAlone('escape'), true)
   .modifiers('??')
   .manipulators({
     '\u23CE': toKey('delete_or_backspace'),
-    i: toKey('up_arrow'), 
+    i: toKey('up_arrow'),   
     j: toKey('left_arrow'), 
     k: toKey('down_arrow'), 
     l: toKey('right_arrow'),
-    o: toKey('page_up'),
-    '.': toKey('page_down'),
+    // Questi sono comodi ma interferisco con lo shift per fare le parentesi
+    // o: toKey('page_up'),
+    // '.': toKey('page_down'),
     a: toKey('‹⇧'),
     s: toKey('<⌃'),
     d: toKey('<⌥'),
