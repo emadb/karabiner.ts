@@ -59,33 +59,15 @@ writeToProfile('Default', [
       d: toKey('left_option'),
       f: toKey('left_command'),
       g: toKey('tab'),
-      q: toKey('1'),
-      w: toKey('2'),
-      e: toKey('3'),
-      r: toKey('4'),
-      t: toKey('5'),
-      y: toKey('6'),
-      u: toKey('7'),
-      //i: toKey('8'),
-      o: toKey('9'),
-      p: toKey('0'),
+      h: toKey('tab', 'left_shift')
     }),
 
-  simlayer('return_or_enter', 'return_or_enter pressed')
-    // .configKey((v) => v.toIfAlone('return_or_enter'), true)
-    // .modifiers('??')
-    .manipulators({
-      q: toKey('1'),
-      w: toKey('3'),
-      e: toKey('3'),
-      r: toKey('4'),
-      t: toKey('5'),
-      y: toKey('6'),
-      u: toKey('7'),
-      i: toKey('8'),
-      o: toKey('9'),
-      p: toKey('0'),
-    }),
+  // simlayer('return_or_enter', 'return_or_enter pressed')
+  //   // .configKey((v) => v.toIfAlone('return_or_enter'), true)
+  //   // .modifiers('??')
+  //   .manipulators({
+
+  //   }),
 
   simlayer('return_or_enter', 'return_or_enter-layer', 400)
     .options({
