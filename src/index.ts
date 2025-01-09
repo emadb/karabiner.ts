@@ -26,6 +26,7 @@ writeToProfile('Default', [
       key_down_order: 'strict',
     })
     .manipulators({
+      return_or_enter: toKey('delete_or_backspace'),
       a: toKey('left_shift'),
       s: toKey('left_control'),
       d: toKey('left_option'),
@@ -34,7 +35,18 @@ writeToProfile('Default', [
       k: toKey('right_option'),
       l: toKey('right_control'),
       ';': toKey('right_shift'),
-      return_or_enter: toKey('delete_or_backspace'),
+      '1': toKey('f1'),
+      '2': toKey('f2'),
+      '3': toKey('f3'),
+      '4': toKey('f4'),
+      '5': toKey('f5'),
+      '6': toKey('f6'),
+      '7': toKey('f7'),
+      '8': toKey('f8'),
+      '9': toKey('f9'),
+      '0': toKey('f10'),
+      '-': toKey('f11'),
+      '=': toKey('f12'),
     }),
 
   rule('accent').manipulators([
@@ -51,23 +63,25 @@ writeToProfile('Default', [
       j: toKey('left_arrow'),
       k: toKey('down_arrow'),
       l: toKey('right_arrow'),
-      // Questi sono comodi ma interferisco con lo shift per fare le parentesi
-      // o: toKey('page_up'),
-      // '.': toKey('page_down'),
       a: toKey('left_shift'),
       s: toKey('left_control'),
       d: toKey('left_option'),
       f: toKey('left_command'),
       g: toKey('tab'),
-      h: toKey('tab', 'left_shift')
+      h: toKey('tab', 'left_shift'),
+      '1': toKey('f1'),
+      '2': toKey('f2'),
+      '3': toKey('f3'),
+      '4': toKey('f4'),
+      '5': toKey('f5'),
+      '6': toKey('f6'),
+      '7': toKey('f7'),
+      '8': toKey('f8'),
+      '9': toKey('f9'),
+      '0': toKey('f10'),
+      '-': toKey('f11'),
+      '=': toKey('f12'),
     }),
-
-  // simlayer('return_or_enter', 'return_or_enter pressed')
-  //   // .configKey((v) => v.toIfAlone('return_or_enter'), true)
-  //   // .modifiers('??')
-  //   .manipulators({
-
-  //   }),
 
   simlayer('return_or_enter', 'return_or_enter-layer', 400)
     .options({
@@ -78,6 +92,18 @@ writeToProfile('Default', [
       k: toKey('right_option'),
       l: toKey('right_control'),
       ';': toKey('right_shift'),
+      '1': toKey('f1'),
+      '2': toKey('f2'),
+      '3': toKey('f3'),
+      '4': toKey('f4'),
+      '5': toKey('f5'),
+      '6': toKey('f6'),
+      '7': toKey('f7'),
+      '8': toKey('f8'),
+      '9': toKey('f9'),
+      '0': toKey('f10'),
+      '-': toKey('f11'),
+      '=': toKey('f12'),
     }),
 ])
 
