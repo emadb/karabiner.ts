@@ -21,90 +21,57 @@ import {
 // (--dry-run print the config json into console)
 // + Create a new profile if needed.
 writeToProfile('Default', [
-  simlayer('spacebar', 'mod-layer', 500)
-    .options({
-      key_down_order: 'strict',
-    })
-    .manipulators({
-      return_or_enter: toKey('delete_or_backspace'),
-      a: toKey('left_shift'),
-      s: toKey('left_control'),
-      d: toKey('left_option'),
-      f: toKey('left_command'),
-      j: toKey('right_command'),
-      k: toKey('right_option'),
-      l: toKey('right_control'),
-      ';': toKey('right_shift'),
-      '1': toKey('f1'),
-      '2': toKey('f2'),
-      '3': toKey('f3'),
-      '4': toKey('f4'),
-      '5': toKey('f5'),
-      '6': toKey('f6'),
-      '7': toKey('f7'),
-      '8': toKey('f8'),
-      '9': toKey('f9'),
-      '0': toKey('f10'),
-      '-': toKey('f11'),
-      '=': toKey('f12'),
-    }),
 
-  rule('accent').manipulators([
-    map('.', 'right_command').to('grave_accent_and_tilde', 'left_option'),
-    map('e', 'right_command').to('e', 'left_option'),
+  duoLayer('d', 'f').manipulators([
+    map('1').to('f1'),
+    map('2').to('f2'),
+    map('3').to('f3'),
+    map('4').to('f4'),
+    map('5').to('f5'),
+    map('6').to('f6'),
+    map('7').to('f7'),
+    map('8').to('f8'),
+    map('9').to('f9'),
+    map('0').to('f10'),
+    map('-').to('f11'),
+    map('=').to('f12'),
+  ]),
+
+  duoLayer('j', 'k').manipulators([
+    map('1').to('f1'),
+    map('2').to('f2'),
+    map('3').to('f3'),
+    map('4').to('f4'),
+    map('5').to('f5'),
+    map('6').to('f6'),
+    map('7').to('f7'),
+    map('8').to('f8'),
+    map('9').to('f9'),
+    map('0').to('f10'),
+    map('-').to('f11'),
+    map('=').to('f12'),
   ]),
 
   layer('caps_lock', 'caps_lock pressed')
     .configKey((v) => v.toIfAlone('escape'), true)
     .modifiers('??')
     .manipulators({
-      return_or_enter: toKey('delete_or_backspace'),
-      i: toKey('up_arrow'),
-      j: toKey('left_arrow'),
-      k: toKey('down_arrow'),
-      l: toKey('right_arrow'),
+      ";": toKey('delete_or_backspace'),
       a: toKey('left_shift'),
       s: toKey('left_control'),
       d: toKey('left_option'),
       f: toKey('left_command'),
       g: toKey('tab'),
       h: toKey('tab', 'left_shift'),
-      '1': toKey('f1'),
-      '2': toKey('f2'),
-      '3': toKey('f3'),
-      '4': toKey('f4'),
-      '5': toKey('f5'),
-      '6': toKey('f6'),
-      '7': toKey('f7'),
-      '8': toKey('f8'),
-      '9': toKey('f9'),
-      '0': toKey('f10'),
-      '-': toKey('f11'),
-      '=': toKey('f12'),
+      i: toKey('up_arrow'),
+      j: toKey('left_arrow'),
+      k: toKey('down_arrow'),
+      l: toKey('right_arrow'),
     }),
-
-  simlayer('return_or_enter', 'return_or_enter-layer', 400)
-    .options({
-      key_down_order: 'strict',
-    })
-    .manipulators({
-      j: toKey('right_command'),
-      k: toKey('right_option'),
-      l: toKey('right_control'),
-      ';': toKey('right_shift'),
-      '1': toKey('f1'),
-      '2': toKey('f2'),
-      '3': toKey('f3'),
-      '4': toKey('f4'),
-      '5': toKey('f5'),
-      '6': toKey('f6'),
-      '7': toKey('f7'),
-      '8': toKey('f8'),
-      '9': toKey('f9'),
-      '0': toKey('f10'),
-      '-': toKey('f11'),
-      '=': toKey('f12'),
-    }),
+  rule('accent').manipulators([
+    map('.', 'right_command').to('grave_accent_and_tilde', 'left_option'),
+    map('e', 'right_command').to('e', 'left_option'),
+  ]),
 ])
 
 /*
