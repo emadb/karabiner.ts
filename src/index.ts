@@ -56,14 +56,14 @@ writeToProfile('Default', [
     .configKey((v) => v.toIfAlone('escape'), true)
     .modifiers('??')
     .manipulators({
-      ";": toKey('delete_or_backspace'),
+      "return_or_enter": toKey('delete_or_backspace'),
       a: toKey('left_shift'),
       s: toKey('left_control'),
       d: toKey('left_option'),
       f: toKey('left_command'),
       g: toKey('tab'),
       h: toKey('tab', 'left_shift'),
-      i: toKey('up_arrow'),
+      i: toIfAlone('up_arrow'),
       j: toKey('left_arrow'),
       k: toKey('down_arrow'),
       l: toKey('right_arrow'),
